@@ -28,7 +28,6 @@ const ShowProjects = ({ userId }) => {
       console.error("Error deleting project: ", error);
     }
   };
-
   return (
     <div className="card_container">
       {projects.map((project) => (
