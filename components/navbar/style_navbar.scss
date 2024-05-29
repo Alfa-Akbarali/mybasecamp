@@ -1,0 +1,40 @@
+.navbar-container {
+    .navbar {
+      background-color: #333;
+      .nav-wrapper {
+        .brand-logo {
+          color: #fff;
+          font-weight: bold;
+        }
+        .sidenav-trigger {
+          color: #fff;
+        }
+        ul {
+          li {
+            a {
+              color: #fff;
+              display: flex;
+              align-items: center;
+              i {
+                margin-right: 5px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .sidenav {
+      background-color: #333;
+      li {
+        a {
+          color: #fff;
+          display: flex;
+          align-items: center;
+          i {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+  
