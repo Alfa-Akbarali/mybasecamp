@@ -7,12 +7,12 @@ import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase";
 import Navbar from "../navbar/Navbar";
 
-const AddNew = ({ inputs, title }) => {
+const AddNew = ({ title, inputs }) => {
   const [loading, setLoading] = useState(true);
   const auth = getAuth();
   const navigate = useNavigate();
   const user = auth.currentUser;
-  const [formData, setFormData] = useState(null);
+  const [formData, setFormData] = useState({});
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
@@ -29,14 +29,10 @@ const AddNew = ({ inputs, title }) => {
   }, [auth]);
 
   const handleInputChange = (e, inputName) => {
-    if (formData === null) {
-      setFormData({ [inputName]: e.target.value });
-    } else {
-      setFormData((prevState) => ({
-        ...prevState,
-        [inputName]: e.target.value,
-      }));
-    }
+    setFormData((prevState) => ({
+      ...prevState,
+      [inputName]: e.target.value,
+    }));
   };
 
   const handleAdd = async (e) => {
@@ -55,8 +51,6 @@ const AddNew = ({ inputs, title }) => {
         console.error("Error adding project: ", err);
         M.toast({ html: 'Error adding project', classes: 'red' });
       }
-    } else {
-      console.log("User not authenticated");
     }
   };
 
