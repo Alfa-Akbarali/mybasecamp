@@ -24,6 +24,7 @@ const ShowProjects = ({ userId }) => {
     try {
       await deleteDoc(doc(db, "Projects", projectId));
       console.log("Project deleted successfully");
+      window.location.reload()
     } catch (error) {
       console.error("Error deleting project: ", error);
     }
@@ -39,7 +40,7 @@ const ShowProjects = ({ userId }) => {
           </div>
           <div className="card-action">
             <Link to={`/edit/${project.id}`}>Edit<i className="material-icons">edit</i></Link>
-            <a href="/" onClick={() => handleDelete(project.id)}>Delete<i className="material-icons">delete</i></a>
+            <a  onClick={() => handleDelete(project.id)} style={{cursor: "pointer"}}>Delete<i className="material-icons">delete</i></a>
           </div>
         </div>
       ))}
