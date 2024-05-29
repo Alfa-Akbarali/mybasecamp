@@ -6,6 +6,7 @@ import './style_add.scss'
 import { addDoc, collection, serverTimestamp } from "firebase/firestore";
 import { db } from "../../firebase";
 import Navbar from "../navbar/Navbar";
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 const AddNew = ({ title, inputs }) => {
   const [loading, setLoading] = useState(true);

@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { auth, db } from "../../firebase";
 import { onAuthStateChanged, signOut, deleteUser } from "firebase/auth";
 import { deleteDoc, doc, collection, getDocs, getDoc, query, where } from "firebase/firestore";
+import M from 'materialize-css/dist/js/materialize.min.js';
 import AdminIcon from "../../assets/admin_icon";
 import './style_navbar.scss'
 const Navbar = () => {
