@@ -1,17 +1,20 @@
-import { initializeApp } from "firebase/app";
-import { getAuth } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import firebase from 'firebase/compat/app';
+import "firebase/compat/firestore";
+import 'firebase/compat/auth';
+import 'firebase/compat/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBZgbm2KY6vXVslx_kZxlkSkvMTxdgP9W8",
-  authDomain: "mybasecamp-2f5b8.firebaseapp.com",
-  projectId: "mybasecamp-2f5b8",
-  storageBucket: "mybasecamp-2f5b8.appspot.com",
-  messagingSenderId: "564985549012",
-  appId: "1:564985549012:web:e736c99ae9aa18d9a72b41"
+  apiKey: "AIzaSyDITxJ8F6LtYQgbw65uX9Y4ZHJOR5g-JDw",
+  authDomain: "myinstagram-e939b.firebaseapp.com",
+  projectId: "myinstagram-e939b",
+  storageBucket: "myinstagram-e939b.appspot.com",
+  messagingSenderId: "700619809059",
+  appId: "1:700619809059:web:ada818673a9c461957ec96",
+  measurementId: "G-BS7TYK0ZLY"
 };
 
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const db = getFirestore(app);
-export {app, auth, db}; 
+const firebaseApp = firebase.initializeApp(firebaseConfig)
+const auth = firebase.auth()
+const storage = firebase.storage()
+const db = firebaseApp.firestore()
+export { auth, db, storage }
